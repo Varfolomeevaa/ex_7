@@ -7,5 +7,11 @@ for i in range(len(ptr)):
     else:
         words[ptr[i]] = 1
 
-for i in sorted(words.items(), reverse=True):
-    print(i[0])
+
+counts = list(words.values())
+counts.sort(reverse=True)
+
+for i in range(len(counts)):
+    for j in words:
+        if counts[i] == words[j]:
+            print(j)
